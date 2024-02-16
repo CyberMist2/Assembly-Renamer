@@ -63,8 +63,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Library\Class1.cs" />
-    <Compile Include="Library\Tools\Class1a.cs" />
+    <Compile Include="Library\PaidWorker.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -108,6 +107,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Assets\code_icon_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\black_arrow_down.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

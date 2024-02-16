@@ -5,13 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Assembly_Renamer"
         mc:Ignorable="d" WindowStartupLocation="CenterScreen"
-        ResizeMode="CanMinimize"
-        Title="Assembly Renamer" Height="300" Width="350">
+        ResizeMode="CanResizeWithGrip"
+        Title="Assembly Renamer" Height="500" Width="400">
     <Grid>
-        <Button x:Name="DetectButton" Content="Detect Assemblies" HorizontalAlignment="Center" VerticalAlignment="Top" Click="DetectButton_Click" Margin="0,15,0,0" Padding="5,5,5,5" Cursor="Hand"/>
-        <ScrollViewer Margin="0,60,0,0" VerticalScrollBarVisibility="Auto">
-            <StackPanel x:Name="AssembliesHolder" Orientation="Vertical">
-                <Modules:AssemblyInfoCard />
+        <Button x:Name="DetectButton" Content="DETECT ASSEMBLIES" HorizontalAlignment="Center" VerticalAlignment="Top" Click="DetectButton_Click" Margin="0,15,0,0" Padding="5,5,5,5" Cursor="Hand" FontWeight="SemiBold"/>
+        <ScrollViewer Margin="0,60,0,0" VerticalScrollBarVisibility="Auto" VerticalAlignment="Top">
+            <StackPanel x:Name="AssembliesHolder" Orientation="Vertical" HorizontalAlignment="Center">
+                <TextBlock Text="Press the button above to start" Foreground="#FF009A09" FontWeight="Bold"/>
             </StackPanel>
         </ScrollViewer>
 
