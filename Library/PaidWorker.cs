@@ -118,7 +118,22 @@ namespace Assembly_Renamer.Library
                 }
             }
 
-            // step 3: rename name
+            // step 3: rename any executable target references
+            foreach (string filePath in filteredFiles)
+            {
+                string content = File.ReadAllText(filePath);
+
+                bool containsWord = content.Contains($"{old_assembly_name}.exe");
+
+                if (containsWord)
+                {
+                    content = content.Replace($"{old_assembly_name}.exe", $"{new_assembly_name}.exe");
+
+                    File.WriteAllText(filePath, content);
+                }
+            }
+
+            // step 4: rename any name
             foreach (string filePath in filteredFiles)
             {
                 string content = File.ReadAllText(filePath);
@@ -133,7 +148,22 @@ namespace Assembly_Renamer.Library
                 }
             }
 
-            MessageBox.Show("Word replacement completed.");
+            // step 5: delete obj and bin folders
+            {
+                foreach (string dirPath in Directory.GetDirectories(folderPath, "*", SearchOption.AllDirectories))
+                {
+                    DirectoryInfo dirInfo = new DirectoryInfo(dirPath);
+                    if (dirInfo.Name == "obj" || dirInfo.Name == "bin")
+                    {
+                        Directory.Delete(dirPath, true);
+                    }
+                }
+            }
+
+            MessageBox.Show("Renaming completed, don't forget:\r\n" +
+                "\r\n1. Restart Visual Studio!" +
+                "\r\n2. Clean Solution" +
+                "\r\n3. Compile");
         }
     }
 }

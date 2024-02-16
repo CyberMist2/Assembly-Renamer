@@ -34,6 +34,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>assembly_renamer_icon.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -110,6 +113,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Assets\black_arrow_down.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="assembly_renamer_icon.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
