@@ -1,4 +1,7 @@
 # Assembly Renamer
+___
+
+Assembly Renamer allows you to rename any .NET assemblies, for example c# wpf .net framework
 
 - Original Author: **CyberMist2**
 
